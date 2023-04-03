@@ -1,0 +1,6 @@
+sek=int(input("SEK:"))
+
+def sek_to_eur(sek):
+    return(sek*0.088)
+
+print ("="+str(sek_to_eur(sek))+"£")
