@@ -13,26 +13,7 @@ python exchange_rate_calculator.py USD EUR 100
 Note:
 Ensure an active internet connection for up-to-date exchange rates.
 Feel free to use, modify, or integrate this script into your projects for efficient currency-related operations.
-
----->>>
-
-To use the currency exchange rate calculator and converter in a web or application, you can follow these general steps:
-
-Create a Web Interface:
-Develop a web page using HTML, CSS, and JavaScript to create a user interface.
-Use a framework like Flask (for Python) or any other web framework of your choice to build a server.
-
-Integrate Python Code:
-Use the existing Python script as the backend logic for handling currency exchange calculations.
-Set up endpoints in your web application to interact with the Python script.
-
-Communicate with Python Script:
-Use AJAX or fetch API in JavaScript to send requests from the web page to the Python script.
-The Python script processes the requests, retrieves exchange rates, and returns the results.
-
-Display Results:
-Update the web page dynamically with the results obtained from the Python script.
-
+Make sure to sign up for an API key from Open Exchange Rates (https://openexchangerates.org/) and replace the free key in the code with your own.
 
 
 
