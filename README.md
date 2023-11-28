@@ -35,30 +35,17 @@ Update the web page dynamically with the results obtained from the Python script
 Here's a basic example using Flask as the web framework:
 Python Flask Server:
 
-from flask import Flask, render_template, request, jsonify
-from exchange_rate_calculator import calculate_exchange
+try:
+    from_currency = request.form['from_currency']
+    to_currency = request.form['to_currency']
+    amount = float(request.form['amount'])
 
-app = Flask(__name__)
+    result = calculate_exchange(from_currency, to_currency, amount)
+    return jsonify({'success': True, 'result': result})
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+except Exception as e:
+    return jsonify({'success': False, 'error': str(e)})
 
-@app.route('/calculate_exchange', methods=['POST'])
-def calculate_exchange_route():
-    try:
-        from_currency = request.form['from_currency']
-        to_currency = request.form['to_currency']
-        amount = float(request.form['amount'])
-
-        result = calculate_exchange(from_currency, to_currency, amount)
-        return jsonify({'success': True, 'result': result})
-
-    except Exception as e:
-        return jsonify({'success': False, 'error': str(e)})
-
-if __name__ == '__main__':
-    app.run(debug=True)
 
 HTML Template (index.html):
 <!DOCTYPE html>
